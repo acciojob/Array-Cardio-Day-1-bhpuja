@@ -24,19 +24,19 @@ const people = [
 
 // 1. Filter the list of inventors for those who were born in the 1500's
 const bornIn1500s = inventors.filter(inventor => inventor.year >= 1500 && inventor.year < 1600);
-console.log('Inventors born in the 1500s:', bornIn1500s);
+console.log('1. Inventors born in the 1500s:', bornIn1500s);
 
 // 2. Give us an array of the inventors' first and last names
 const fullNames = inventors.map(inventor => `${inventor.first} ${inventor.last}`);
-console.log('Full names of inventors:', fullNames);
+console.log('2. Full names of inventors:', fullNames);
 
 // 3. Sort the inventors by birthdate, oldest to youngest
 const sortedByBirthdate = inventors.sort((a, b) => a.year - b.year);
-console.log('Inventors sorted by birthdate:', sortedByBirthdate);
+console.log('3. Inventors sorted by birthdate:', sortedByBirthdate);
 
 // 4. How many years did all the inventors live combined?
 const totalYearsLived = inventors.reduce((total, inventor) => total + (inventor.passed - inventor.year), 0);
-console.log('Total years all inventors lived:', totalYearsLived);
+console.log('4. Total years all inventors lived:', totalYearsLived);
 
 // 5. Sort the inventors by years lived
 const sortedByYearsLived = inventors.sort((a, b) => {
@@ -44,10 +44,11 @@ const sortedByYearsLived = inventors.sort((a, b) => {
   const nextInventor = b.passed - b.year;
   return lastInventor - nextInventor;
 });
-console.log('Inventors sorted by years lived:', sortedByYearsLived);
+console.log('5. Inventors sorted by years lived:', sortedByYearsLived);
 
 // 6. Create a list of Boulevards in Paris that contain 'de' anywhere in the name
-// This part would require DOM manipulation, so it's commented out unless used in a browser context.
+// This part would require DOM manipulation if you're working in a browser context. 
+// For example:
 // const category = document.querySelector('.mw-category');
 // const links = Array.from(category.querySelectorAll('a'));
 // const deBoulevards = links
@@ -61,7 +62,7 @@ const sortedPeople = people.sort((a, b) => {
   const [bLast, bFirst] = b.split(', ');
   return aLast.localeCompare(bLast);
 });
-console.log('People sorted alphabetically by last name:', sortedPeople);
+console.log('7. People sorted alphabetically by last name:', sortedPeople);
 
 // 8. Sum up the instances of each of these
 const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck'];
@@ -73,5 +74,4 @@ const transportationCount = data.reduce((obj, item) => {
   obj[item]++;
   return obj;
 }, {});
-console.log('Transportation count:', transportationCount);
-
+console.log('8. Transportation count:', transportationCount);
