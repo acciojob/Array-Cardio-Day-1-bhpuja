@@ -47,14 +47,13 @@ const sortedByYearsLived = inventors.sort((a, b) => {
 console.log('5. Inventors sorted by years lived:', sortedByYearsLived);
 
 // 6. Create a list of Boulevards in Paris that contain 'de' anywhere in the name
-// This part would require DOM manipulation if you're working in a browser context. 
-// For example:
+// This part would require working in a browser context with DOM manipulation. Example:
 // const category = document.querySelector('.mw-category');
 // const links = Array.from(category.querySelectorAll('a'));
 // const deBoulevards = links
 //   .map(link => link.textContent)
 //   .filter(streetName => streetName.includes('de'));
-// console.log(deBoulevards);
+// console.log('6. Boulevards with "de":', deBoulevards);
 
 // 7. Sort the people alphabetically by last name
 const sortedPeople = people.sort((a, b) => {
